@@ -1,0 +1,14 @@
+<%- partial('_partial/head') %>
+<main >
+  <section class="section">
+    <h1 class="title is-3"><%= page.title %></h1>
+  </section>
+
+  <% site.tags.each(function(item){ %>
+    <div id="<%= item.name %>">
+        <a href="<%- url_for(item.path) %>">
+        <%= item.name %></a>
+    </div>
+  <% }) %>
+</main>
+<%- partial('_partial/paginator') %>
